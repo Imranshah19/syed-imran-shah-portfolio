@@ -659,6 +659,18 @@
     animation: pulse 2s infinite;
   }
 
+  .cursor {
+    display: inline-block;
+    color: var(--accent);
+    animation: blink 1s infinite;
+    font-weight: 300;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
@@ -699,7 +711,7 @@
     <h1 class="fade-up delay-2">
       Syed<br/>Imran<br/><span>Shah</span>
     </h1>
-    <p class="hero-title fade-up delay-3">AI Solutions Developer &nbsp;/&nbsp; Full Stack Engineer &nbsp;/&nbsp; Business Owner</p>
+    <p class="hero-title fade-up delay-3"><span id="typewriter"></span><span class="cursor">|</span></p>
     <p class="hero-desc fade-up delay-4">
       I build intelligent, production-ready AI applications — from shop management systems to multi-agent platforms. Based in Karachi, Pakistan. Shipping real products for real businesses.
     </p>
@@ -723,8 +735,8 @@
       <span class="stat-label">Live Deploys</span>
     </div>
     <div class="stat-card">
-      <span class="stat-num">PKR</span>
-      <span class="stat-label">Based in PK</span>
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Years Experience</span>
     </div>
   </div>
 </div>
@@ -1039,5 +1051,45 @@
   <p>Built with <span>♥</span> in Karachi, Pakistan</p>
 </footer>
 
+<script>
+  const roles = [
+    "AI Solutions Developer",
+    "Full Stack Engineer",
+    "Business Owner",
+    "FastAPI + React Expert",
+    "Freelance AI Developer"
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const el = document.getElementById('typewriter');
+
+  function type() {
+    const current = roles[roleIndex];
+    if (isDeleting) {
+      el.textContent = current.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      el.textContent = current.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let speed = isDeleting ? 60 : 100;
+
+    if (!isDeleting && charIndex === current.length) {
+      speed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      speed = 400;
+    }
+
+    setTimeout(type, speed);
+  }
+
+  setTimeout(type, 1200);
+</script>
 </body>
 </html>
