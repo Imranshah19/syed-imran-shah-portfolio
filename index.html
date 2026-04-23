@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Syed Imran Shah — AI-Powered HR & Developer</title>
+<title>Syed Imran Shah — AI-Powered HR Professional & Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -14,13 +14,13 @@
     --accent: #00e5a0;
     --accent2: #0070f3;
     --accent3: #ff6b35;
-    --gold: #C9A84C;
     --text: #e8edf3;
     --muted: #6b7a8d;
     --card: rgba(255,255,255,0.03);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   html { scroll-behavior: smooth; }
 
   body {
@@ -32,6 +32,7 @@
     line-height: 1.6;
   }
 
+  /* Noise overlay */
   body::before {
     content: '';
     position: fixed;
@@ -42,6 +43,7 @@
     opacity: 0.3;
   }
 
+  /* Grid bg */
   body::after {
     content: '';
     position: fixed;
@@ -74,7 +76,6 @@
     color: var(--accent);
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-decoration: none;
   }
 
   .nav-links {
@@ -214,29 +215,6 @@
     transform: translateY(-2px);
   }
 
-  .btn-gold {
-    background: var(--gold);
-    color: #000;
-    padding: 14px 32px;
-    border: none;
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
-  }
-
-  .btn-gold:hover {
-    background: #e0be6a;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(201,168,76,0.3);
-  }
-
   /* Floating stats */
   .hero-stats {
     position: absolute;
@@ -319,6 +297,13 @@
     max-width: 60px;
   }
 
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+
   /* ABOUT */
   .about-grid {
     display: grid;
@@ -334,27 +319,10 @@
     margin-bottom: 16px;
   }
 
-  .about-text p strong { color: var(--accent); font-weight: 500; }
-  .about-text p strong.gold { color: var(--gold); }
-
-  .dual-badge {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
+  .about-text p strong {
+    color: var(--accent);
+    font-weight: 500;
   }
-
-  .badge {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    padding: 6px 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: 1px solid;
-  }
-
-  .badge-green { border-color: var(--accent); color: var(--accent); }
-  .badge-gold { border-color: var(--gold); color: var(--gold); }
 
   .about-highlights {
     display: flex;
@@ -377,12 +345,11 @@
     background: rgba(0,229,160,0.03);
   }
 
-  .highlight-item.gold-item:hover {
-    border-color: rgba(201,168,76,0.3);
-    background: rgba(201,168,76,0.03);
+  .hi-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
   }
-
-  .hi-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
 
   .hi-label {
     font-family: 'Space Mono', monospace;
@@ -393,8 +360,10 @@
     margin-bottom: 4px;
   }
 
-  .hi-label.gold { color: var(--gold); }
-  .hi-val { font-size: 14px; color: var(--text); }
+  .hi-val {
+    font-size: 14px;
+    color: var(--text);
+  }
 
   /* PROJECTS */
   .projects-grid {
@@ -480,14 +449,9 @@
     transition: all 0.3s;
   }
 
-  .tag:hover { border-color: var(--accent); color: var(--accent); }
-
-  .project-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-self: start;
-    margin-top: 28px;
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   .project-live {
@@ -504,13 +468,12 @@
     border: 1px solid rgba(0,229,160,0.3);
     transition: all 0.3s;
     white-space: nowrap;
+    align-self: start;
+    margin-top: 28px;
   }
 
-  .project-live:hover { background: rgba(0,229,160,0.1); }
-
-  .project-live.live {
-    color: var(--accent);
-    border-color: rgba(0,229,160,0.5);
+  .project-live:hover {
+    background: rgba(0,229,160,0.1);
   }
 
   /* SKILLS */
@@ -545,7 +508,11 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .skill-list { display: flex; flex-direction: column; gap: 10px; }
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   .skill-item {
     font-size: 13px;
@@ -562,55 +529,6 @@
     flex-shrink: 0;
   }
 
-  /* HR SECTION */
-  .hr-section {
-    background: rgba(201,168,76,0.03);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 40px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-
-  .hr-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-  }
-
-  .hr-section-title {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-
-  .hr-skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-
-  .hr-chip {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    padding: 8px 12px;
-    border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gold);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    transition: all 0.3s;
-  }
-
-  .hr-chip:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: var(--gold);
-  }
-
   /* CONTACT */
   .contact-wrapper {
     display: grid;
@@ -619,7 +537,11 @@
     align-items: start;
   }
 
-  .contact-info { display: flex; flex-direction: column; gap: 16px; }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
   .contact-item {
     display: flex;
@@ -637,7 +559,10 @@
     transform: translateX(4px);
   }
 
-  .contact-icon { font-size: 18px; flex-shrink: 0; }
+  .contact-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
 
   .contact-label {
     font-family: 'Space Mono', monospace;
@@ -648,13 +573,16 @@
     margin-bottom: 2px;
   }
 
-  .contact-val { font-size: 14px; color: var(--text); }
+  .contact-val {
+    font-size: 14px;
+    color: var(--text);
+  }
 
-  /* CV DOWNLOAD BOX */
+  /* CV DOWNLOAD */
   .cv-box {
     padding: 40px;
-    border: 1px solid rgba(201,168,76,0.25);
-    background: rgba(201,168,76,0.03);
+    border: 1px solid rgba(0,229,160,0.2);
+    background: rgba(0,229,160,0.03);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -665,7 +593,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
   }
 
   .cv-box h3 {
@@ -673,7 +601,6 @@
     font-size: 22px;
     font-weight: 800;
     margin-bottom: 10px;
-    color: var(--gold);
   }
 
   .cv-box p {
@@ -681,14 +608,6 @@
     color: var(--muted);
     margin-bottom: 28px;
     line-height: 1.6;
-  }
-
-  .cv-box-badges {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
   }
 
   /* FOOTER */
@@ -709,8 +628,9 @@
     letter-spacing: 1px;
   }
 
-  footer span { color: var(--accent); }
-  footer span.gold { color: var(--gold); }
+  footer span {
+    color: var(--accent);
+  }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
@@ -758,9 +678,13 @@
     .hero { padding: 100px 20px 60px; }
     .hero-stats { display: none; }
     section { padding: 60px 20px; }
-    .about-grid, .projects-grid, .skills-grid, .contact-wrapper { grid-template-columns: 1fr; }
-    .project-card.featured { grid-column: 1; grid-template-columns: 1fr; }
-    .hr-skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-grid, .projects-grid, .skills-grid, .contact-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .project-card.featured {
+      grid-column: 1;
+      grid-template-columns: 1fr;
+    }
     footer { flex-direction: column; gap: 12px; text-align: center; }
   }
 </style>
@@ -769,7 +693,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">SIS.DEV</a>
+  <div class="nav-logo">SIS.DEV</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -782,38 +706,38 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-tag fade-up delay-1">
-      <span class="live-dot"></span> Available for freelance & HR opportunities
+      <span class="live-dot"></span> Available for freelance work
     </div>
     <h1 class="fade-up delay-2">
       Syed<br/>Imran<br/><span>Shah</span>
     </h1>
     <p class="hero-title fade-up delay-3"><span id="typewriter"></span><span class="cursor">|</span></p>
+    <p style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:2px; margin-bottom:24px;" class="fade-up delay-3">MPA (HRM) &nbsp;·&nbsp; 10+ Years HR Experience &nbsp;·&nbsp; Gulf Experience &nbsp;·&nbsp; AI Developer</p>
     <p class="hero-desc fade-up delay-4">
-      AI-Powered HR Professional & Full Stack Developer. I combine 10+ years of HR expertise with real-world AI engineering — building production-ready systems that solve actual business problems. Based in Karachi, Pakistan.
+      I build intelligent, production-ready AI applications — from shop management systems to multi-agent platforms. Based in Karachi, Pakistan. Shipping real products for real businesses.
     </p>
     <div class="hero-btns fade-up delay-5">
       <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="https://imranshah19.github.io/syed-imran-shah-portfolio" class="btn-secondary" target="_blank">Portfolio Site</a>
-      <a href="#contact" class="btn-gold">Get In Touch</a>
+      <a href="#contact" class="btn-secondary">Get In Touch</a>
     </div>
   </div>
 
   <div class="hero-stats">
     <div class="stat-card">
-      <span class="stat-num">10+</span>
-      <span class="stat-label">Years HR Exp</span>
+      <span class="stat-num">8+</span>
+      <span class="stat-label">Projects Built</span>
     </div>
     <div class="stat-card">
-      <span class="stat-num">8+</span>
-      <span class="stat-label">AI Projects</span>
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Tech Stacks</span>
     </div>
     <div class="stat-card">
       <span class="stat-num">2+</span>
       <span class="stat-label">Live Deploys</span>
     </div>
     <div class="stat-card">
-      <span class="stat-num">2</span>
-      <span class="stat-label">Gulf Exp (KSA)</span>
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Years Experience</span>
     </div>
   </div>
 </div>
@@ -826,49 +750,38 @@
   </div>
   <div class="about-grid">
     <div class="about-text">
-      <div class="dual-badge">
-        <span class="badge badge-gold">AI-Powered HR Professional</span>
-        <span class="badge badge-green">Full Stack Developer</span>
-      </div>
-      <p>I'm <strong>Syed Imran Shah</strong> — an <strong class="gold">AI-Powered HR Professional</strong> and Full Stack Developer based in Karachi, Pakistan. I hold an <strong>MPA in Human Resource Management</strong> and bring 10+ years of progressive HR experience across textile manufacturing, construction, and business operations.</p>
-      <p>What makes me unique: I don't just know HR theory — I have <strong>2 years of Gulf experience</strong> in Saudi Arabia and have personally built and deployed AI-powered HR systems in production. I bridge the gap between people management and digital transformation.</p>
-      <p>As the owner of <strong>AlSyed Autoparts</strong>, I understand business operations from the inside. This real-world perspective drives me to build AI solutions that actually work in the field — from shop management systems to multi-agent HR platforms.</p>
-      <p>Currently pursuing <strong>GIAIC AI & Computing</strong> certification while actively freelancing on Fiverr and building SaaS products targeting Pakistan's growing small business market.</p>
+      <p>I'm <strong>Syed Imran Shah</strong>, an AI Solutions Developer and Full Stack Engineer based in Karachi, Pakistan. I specialize in building practical, AI-powered systems that solve real business problems.</p>
+      <p>As the owner of <strong>AlSyed Autoparts</strong>, I understand business needs from the inside. This gives me a unique edge — I don't just build software, I build solutions that actually work in the field.</p>
+      <p>I work with <strong>FastAPI, React, Next.js, PostgreSQL</strong>, and integrate cutting-edge AI models (Claude, OpenAI) into production applications. From multi-agent systems to shop management tools — I've shipped them all.</p>
+      <p>Currently pursuing <strong>GIAIC AI & Computing</strong> certification while actively freelancing on Fiverr and building SaaS products for Pakistan's growing small business market.</p>
     </div>
     <div class="about-highlights">
-      <div class="highlight-item gold-item">
+      <div class="highlight-item">
         <span class="hi-icon">🎓</span>
         <div>
-          <div class="hi-label gold">Education</div>
-          <div class="hi-val">MPA (HRM) — University of Karachi, 2013<br/>B.Com — University of Karachi, 2009<br/>GIAIC AI & Computing (2024–ongoing)</div>
-        </div>
-      </div>
-      <div class="highlight-item gold-item">
-        <span class="hi-icon">🌍</span>
-        <div>
-          <div class="hi-label gold">Gulf Experience</div>
-          <div class="hi-val">Al-Aren Construction — Jeddah, KSA<br/>Office Administrator & Document Controller<br/>2016 – 2018</div>
+          <div class="hi-label">Education</div>
+          <div class="hi-val">MPA (HRM) — University of Karachi<br/>GIAIC AI & Computing (ongoing)</div>
         </div>
       </div>
       <div class="highlight-item">
         <span class="hi-icon">🏢</span>
         <div>
-          <div class="hi-label">Business & HR</div>
-          <div class="hi-val">HR & Admin Officer — Valitex (Pvt) Ltd (2013–2015)<br/>HR & Operations Manager — AlSyed Enterprises (2015–Present)</div>
+          <div class="hi-label">Business</div>
+          <div class="hi-val">Owner — AlSyed Autoparts<br/>Karachi, Pakistan</div>
         </div>
       </div>
       <div class="highlight-item">
         <span class="hi-icon">💼</span>
         <div>
           <div class="hi-label">Freelance</div>
-          <div class="hi-val">Fiverr: syedio — AI-Powered App Development<br/>Available worldwide (Remote)</div>
+          <div class="hi-val">Fiverr: syedio<br/>AI-Powered App Development</div>
         </div>
       </div>
       <div class="highlight-item">
         <span class="hi-icon">📍</span>
         <div>
           <div class="hi-label">Location</div>
-          <div class="hi-val">North Karachi, Pakistan<br/>Open to Gulf & International Opportunities</div>
+          <div class="hi-val">Karachi, Pakistan<br/>Available Worldwide (Remote)</div>
         </div>
       </div>
     </div>
@@ -883,11 +796,31 @@
   </div>
   <div class="projects-grid">
 
+    <!-- Featured -->
     <div class="project-card featured">
       <div>
         <div class="project-num">01 — FEATURED</div>
+        <div class="project-name">AI-HRMS AgentFactory</div>
+        <p class="project-desc">Next-generation HR Management System powered by 5 Autonomous AI Agents with Agent Factory Architecture. Features auto triggers, webhooks, 4-Tab Agent Dashboard, RAG Chatbot, and 4,629+ lines of production code. Major upgrade from basic HRMS to fully autonomous HR platform.</p>
+        <div class="project-tags">
+          <span class="tag">5 AI Agents</span>
+          <span class="tag">RAG Chatbot</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Webhooks</span>
+          <span class="tag">Agent Factory</span>
+        </div>
+      </div>
+      <a href="https://github.com/Imranshah19/AI-HRMS-AgentFactory" class="project-live" target="_blank">
+        ↗ GitHub
+      </a>
+    </div>
+
+    <div class="project-card featured">
+      <div>
+        <div class="project-num">02 — FEATURED</div>
         <div class="project-name">AI-Powered Shop Management System</div>
-        <p class="project-desc">Full-stack inventory & billing system built for AlSyed Autoparts. FastAPI backend deployed on Railway, React/Vite frontend on Vercel. Includes authentication, product management, invoicing, job cards, WhatsApp bill sharing, and AI-powered insights.</p>
+        <p class="project-desc">Full-stack inventory & billing system built for AlSyed Autoparts. FastAPI backend deployed on Railway, React/Vite frontend on Vercel. Includes authentication, product management, invoicing, and AI-powered insights.</p>
         <div class="project-tags">
           <span class="tag">FastAPI</span>
           <span class="tag">React</span>
@@ -895,12 +828,11 @@
           <span class="tag">Railway</span>
           <span class="tag">Vercel</span>
           <span class="tag">Python</span>
-          <span class="tag">Claude AI</span>
         </div>
       </div>
-      <div class="project-links">
-        <a href="https://github.com/Imranshah19/AlSyed-Autoparts-AI-Shop-Management-System" class="project-live" target="_blank">↗ GitHub</a>
-      </div>
+      <a href="https://github.com/Imranshah19" class="project-live" target="_blank">
+        ↗ GitHub
+      </a>
     </div>
 
     <div class="project-card">
@@ -913,16 +845,12 @@
         <span class="tag">Vercel</span>
         <span class="tag">JavaScript</span>
       </div>
-      <br/>
-      <a href="https://alsyed-autoparts-chatbot.vercel.app" class="project-live live" target="_blank" style="display:inline-flex; margin-top:8px;">
-        <span class="live-dot" style="width:6px;height:6px;"></span> Live Demo
-      </a>
     </div>
 
     <div class="project-card">
       <div class="project-num">03</div>
-      <div class="project-name">AI-HRMS (Startup)</div>
-      <p class="project-desc">Enterprise-grade HR Management System with AI attrition prediction, RAG chatbot, FBR payroll, and anomaly detection. 33 DB tables, 137 tests. Built with Next.js 14, FastAPI, PostgreSQL, Redis, Docker.</p>
+      <div class="project-name">AI-HRMS (v1 — Startup)</div>
+      <p class="project-desc">First generation HR Management System with AI attrition prediction, RAG chatbot, FBR payroll, and anomaly detection. 33 DB tables, 137 tests. Foundation that evolved into AgentFactory.</p>
       <div class="project-tags">
         <span class="tag">Next.js 14</span>
         <span class="tag">FastAPI</span>
@@ -971,7 +899,7 @@
     <div class="project-card">
       <div class="project-num">07</div>
       <div class="project-name">Pharmacy POS System</div>
-      <p class="project-desc">Globally deployable Pharmacy POS & Management System. SaaS-ready architecture with full inventory, billing, prescription tracking, and reporting modules.</p>
+      <p class="project-desc">Globally deployable Pharmacy POS & Management System design. SaaS-ready architecture with full inventory, billing, prescription tracking, and reporting modules.</p>
       <div class="project-tags">
         <span class="tag">SaaS</span>
         <span class="tag">FastAPI</span>
@@ -1001,27 +929,6 @@
     <span class="section-num">03 — SKILLS</span>
     <div class="section-line"></div>
   </div>
-
-  <!-- HR Skills Gold Section -->
-  <div class="hr-section">
-    <div class="hr-section-title">✦ HR & People Management Expertise</div>
-    <div class="hr-skills-grid">
-      <div class="hr-chip">Talent Acquisition</div>
-      <div class="hr-chip">Performance Mgmt</div>
-      <div class="hr-chip">HR Policy & Compliance</div>
-      <div class="hr-chip">Payroll Administration</div>
-      <div class="hr-chip">Onboarding & Induction</div>
-      <div class="hr-chip">Employee Relations</div>
-      <div class="hr-chip">Training & Development</div>
-      <div class="hr-chip">Labor Law (PK/UAE)</div>
-      <div class="hr-chip">Workforce Planning</div>
-      <div class="hr-chip">Conflict Resolution</div>
-      <div class="hr-chip">Document Control</div>
-      <div class="hr-chip">HR Data Analytics</div>
-    </div>
-  </div>
-
-  <!-- Tech Skills -->
   <div class="skills-grid">
     <div class="skill-group">
       <div class="skill-group-title">Backend</div>
@@ -1085,8 +992,8 @@
         <div class="skill-item">VS Code</div>
         <div class="skill-item">Git / GitHub</div>
         <div class="skill-item">Postman</div>
-        <div class="skill-item">MS Office Suite</div>
-        <div class="skill-item">QuickBooks / Tally</div>
+        <div class="skill-item">Fiverr Freelancing</div>
+        <div class="skill-item">Business Management</div>
       </div>
     </div>
   </div>
@@ -1101,22 +1008,14 @@
   <div class="contact-wrapper">
     <div class="contact-info">
       <p style="color:#6b7a8d; font-size:15px; line-height:1.8; margin-bottom:8px;">
-        Available for freelance AI projects, HR consulting, and Gulf/international opportunities. Let's build something great together.
+        Available for freelance projects, collaborations, and consulting. Let's build something intelligent together.
       </p>
 
       <a href="https://wa.me/923332455770" class="contact-item" target="_blank">
         <span class="contact-icon">💬</span>
         <div>
           <div class="contact-label">WhatsApp</div>
-          <div class="contact-val">+92-333-2455770</div>
-        </div>
-      </a>
-
-      <a href="mailto:syed.is1990@gmail.com" class="contact-item">
-        <span class="contact-icon">✉️</span>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-val">syed.is1990@gmail.com</div>
+          <div class="contact-val">+92 333 2455770</div>
         </div>
       </a>
 
@@ -1124,15 +1023,7 @@
         <span class="contact-icon">💼</span>
         <div>
           <div class="contact-label">LinkedIn</div>
-          <div class="contact-val">linkedin.com/in/syed-imran-shah-5894882ba</div>
-        </div>
-      </a>
-
-      <a href="https://github.com/Imranshah19" class="contact-item" target="_blank">
-        <span class="contact-icon">⚙️</span>
-        <div>
-          <div class="contact-label">GitHub</div>
-          <div class="contact-val">github.com/Imranshah19</div>
+          <div class="contact-val">linkedin.com/in/syed-imran-shah</div>
         </div>
       </a>
 
@@ -1144,31 +1035,31 @@
         </div>
       </a>
 
-      <a href="https://imranshah19.github.io/syed-imran-shah-portfolio" class="contact-item" target="_blank">
-        <span class="contact-icon">🌐</span>
+      <a href="https://github.com/Imranshah19" class="contact-item" target="_blank">
+        <span class="contact-icon">⚙️</span>
         <div>
-          <div class="contact-label">Portfolio</div>
-          <div class="contact-val">imranshah19.github.io/syed-imran-shah-portfolio</div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-val">github.com/Imranshah19</div>
+        </div>
+      </a>
+
+      <a href="mailto:Syed.Is1990@gmail.com" class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-val">Syed.Is1990@gmail.com</div>
         </div>
       </a>
     </div>
 
     <div class="cv-box">
       <h3>Download My CV</h3>
-      <div class="cv-box-badges">
-        <span class="badge badge-gold">HR Professional</span>
-        <span class="badge badge-green">AI Developer</span>
-      </div>
-      <p>Complete overview of my HR experience, Gulf background, AI projects, education, and technical skills — all in one document.</p>
-      <a href="https://github.com/Imranshah19/syed-imran-shah-portfolio/raw/main/Syed_Imran_Shah_Final_CV.pdf"
-         class="btn-gold"
-         style="display:inline-block;"
-         target="_blank"
-         download>
+      <p>Get a complete overview of my experience, projects, education, and technical skills in one document.</p>
+      <a href="#" class="btn-primary" style="display:inline-block;" onclick="alert('CV PDF yahan attach karein!')">
         ↓ &nbsp; Download CV (PDF)
       </a>
       <p style="margin-top:20px; font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px;">
-        NORTH KARACHI, PAKISTAN &nbsp;·&nbsp; OPEN TO GULF OPPORTUNITIES
+        KARACHI, PAKISTAN &nbsp;·&nbsp; AVAILABLE WORLDWIDE
       </p>
     </div>
   </div>
@@ -1176,18 +1067,18 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 <span>Syed Imran Shah</span> — <span class="gold">AI-Powered HR Professional</span> & Developer</p>
+  <p>© 2026 <span>Syed Imran Shah</span> — AI Solutions Developer</p>
   <p>Built with <span>♥</span> in Karachi, Pakistan</p>
 </footer>
 
 <script>
   const roles = [
-    "AI-Powered HR Professional",
-    "Full Stack Developer",
+    "AI Solutions Developer",
+    "HR Professional & AI Expert",
+    "Full Stack Engineer",
+    "Business Owner",
     "FastAPI + React Expert",
-    "HR Digital Transformation",
-    "Freelance AI Developer",
-    "Gulf-Experienced HR Manager"
+    "Freelance AI Developer"
   ];
 
   let roleIndex = 0;
